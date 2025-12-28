@@ -1,0 +1,19 @@
+# Python Müll
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Models & Data (Nicht hochladen, zu groß!)
+outputs/
+*.safetensors
+*.bin
+*.pt
+*.db  # Die Datenbank soll lokal generiert werden, nicht hochgeladen
+
+# Environment Vars (Token schützen!)
+.env
+.huggingface_token
