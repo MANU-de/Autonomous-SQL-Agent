@@ -22,24 +22,29 @@ Beyond just generation, this repository features a fully functional **autonomous
 
 ## 📂 Repository Structure
 
+The project is organized into modular components for training, inference, and deployment:
+
 ```text
-sql-assistant/
+├── agent/
+│   └── run_agent.py          # CLI Agent: Translates questions & executes SQL on local DB
 │
-├── scripts/                 # Production pipeline scripts
-│   ├── train.py             # QLoRA fine-tuning logic (w/ W&B logging)
-│   ├── evaluate.py          # Normalized Exact Match evaluation
-│   ├── setup_db.py          # Generates the dummy SQLite database
-│   └── deploy.py            # Automation script for HF Hub uploads
+├── data/
+│   └── README.md             # Documentation for the dummy database generation
 │
-├── agent/                   # Autonomous Agent Logic
-│   └── run_agent.py         # CLI Agent that executes SQL on local DB
+├── demo/
+│   ├── app.py                # Gradio Web UI code (deployed on Hugging Face Spaces)
+│   └── requirements.txt      # Lightweight dependencies for the CPU-only demo
 │
-├── deployment/              # Deployment Configuration
-│   ├── app.py               # Gradio Web UI Code (for Hugging Face Spaces)
-│   └── requirements.txt     # Dependencies for the deployment environment
+├── notebooks/
+│   ├── SQL_Assistant_Production.ipynb  # The main "Command Center" for Colab execution
+│   └── sql_assistant.ipynb             # Initial exploration and experimental code
 │
-├── notebooks/               # Experimental & Exploration
-│   ├── sql_assistant.ipynb    # Initial research and data analysis
-│   └── SQL_Assistant_Production.ipynb   # Launcher notebook for Google Colab
+├── scripts/
+│   ├── train.py              # PEFT/QLoRA Fine-Tuning script (w/ W&B logging)
+│   ├── evaluate.py           # Evaluation script (Exact Match Metric)
+│   ├── setup_db.py           # Generator script for the dummy SQLite database
+│   └── deploy.py             # Automation script to upload models to Hugging Face
 │
-└── requirements.txt         # Core dependencies for reproduction
+├── .gitignore
+├── README.md
+└── requirements.txt          # Core dependencies for training/reproduction
