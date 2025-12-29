@@ -106,23 +106,23 @@ The Autonomous SQL Agent is an intelligent system that bridges the gap between n
 
 ```
 autonomous-sql-agent/
-├── agent/                     # Core agent implementation
-│   └── run_agent.py          # Command-line interface agent
-├── data/                     # Database files and schemas
-│   └── README.md            # Data directory documentation
-├── demo/                     # Web demonstration
-│   ├── app.py               # Gradio web application
-│   └── requirements.txt     # Demo-specific dependencies
-├── notebooks/                # Training and evaluation notebooks
-│   ├── SQL_Assistant_Production.ipynb
-│   └── sql_assistant.ipynb
-├── scripts/                  # Utility scripts
-│   ├── deploy.py            # Deployment automation
-│   ├── evaluate.py          # Model evaluation tools
-│   ├── setup_db.py          # Database initialization
-│   └── train.py             # Model training script
-├── requirements.txt          # Main project dependencies
-├── README.md                 # This file
+├── agent/                     
+│   └── run_agent.py          # CLI-based Autonomous Agent. Connects LLM to local SQLite DB.
+├── data/                     
+│   └── README.md            # Documentation for local data artifacts (e.g., dummy_database.db).
+├── demo/                     
+│   ├── app.py              # Standalone Gradio application for Hugging Face Spaces deployment.
+│   └── requirements.txt     # Lightweight dependencies specifically for the CPU inference demo.
+├── notebooks/                
+│   ├── SQL_Assistant_Production.ipynb   # Primary launcher notebook for Google Colab environments.
+│   └── sql_assistant.ipynb          # Exploratory Data Analysis (EDA) and prototyping.
+├── scripts/                  
+│   ├── deploy.py            # CI/CD utility for uploading model artifacts to Hugging Face Hub.
+│   ├── evaluate.py          # Evaluation suite calculating Normalized Exact Match accuracy.
+│   ├── setup_db.py          # Utility to generate the synthetic SQLite testing database.
+│   └── train.py              # Main QLoRA training pipeline with W&B logging integration.
+├── requirements.txt          # Complete dependency list for training (GPU support).
+├── README.md                 # Project documentation.
 └── .gitignore               # Git ignore rules
 ```
 
